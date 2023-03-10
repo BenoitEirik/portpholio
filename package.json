@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.13.0",
+    "exifreader": "^4.9.2",
+    "jpeg-exif": "^1.1.4",
     "sass-loader": "^13.2.0"
   }
 }

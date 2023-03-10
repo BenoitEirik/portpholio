@@ -1,6 +1,6 @@
 <template>
   <article :style="`background-image: url(${src});`">
-    <div class="title">Épi de blé</div>
+    <div class="title">La Fayette</div>
   </article>
 </template>
 
@@ -35,7 +35,7 @@ article {
     top: 3rem;
     margin: 0.5rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     font-weight: 100;
     text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
       -1px 1px 0 black;

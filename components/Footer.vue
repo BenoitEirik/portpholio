@@ -1,6 +1,7 @@
 <template>
   <footer>
-    <div id="signature">Olaf-Marie Sergent</div>
+    <div class="signature">Olaf-Marie Sergent</div>
+    <p class="profession">Photgraphe amateur</p>
   </footer>
 </template>
 
@@ -8,10 +9,13 @@
 footer {
   color: white;
 
-  #signature {
+  .signature {
     padding: 2rem auto;
-    font-family: "BiteChocolate";
     font-size: 2rem;
+    text-align: center;
+  }
+
+  .profession {
     text-align: center;
   }
 }
