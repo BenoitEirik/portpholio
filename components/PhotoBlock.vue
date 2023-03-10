@@ -1,7 +1,7 @@
 <template>
   <article>
-    <img :src="src" />
-    <div class="title line-clamp">
+    <img :src="src" loading="lazy" />
+    <div class="title">
       La Fayette : un très gros test pour savoir si trois petits points
     </div>
   </article>
@@ -35,11 +35,11 @@ article {
   }
 
   div.title {
-    --pa: 0.5rem;
+    $pa: 0.5rem;
     position: absolute;
     top: 100%;
-    padding: var(--pa);
-    width: calc(100% - 2 * var(--pa));
+    padding: $pa;
+    width: calc(100% - 2 * $pa);
     color: white;
     font-size: 0.8rem;
     white-space: nowrap;

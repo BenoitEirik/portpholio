@@ -12,20 +12,18 @@
 import { Photo } from "@/assets/ts/models";
 import exifr from "exifr";
 
-const imgs = Object.values(
-  import.meta.glob("@/assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
-    eager: true,
-    as: "url",
-  })
-).map((r) => r as unknown as string);
-
 export default defineComponent({
   setup() {
     const photos = ref([] as Photo[]);
     const pageRef = ref(null);
 
     onMounted(async () => {
-      if (!process.client) return;
+      const imgs = Object.values<Record<string, any>>(
+        import.meta.glob("@/assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
+          eager: true,
+          as: "url",
+        })
+      ).map((r) => r as unknown as string);
 
       imgs.forEach(async (url) => {
         const img = new Image();
