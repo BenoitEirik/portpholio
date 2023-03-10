@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'SouthLand';
+  src: url('@/assets/fonts/Southland Letter.otf');
+}
+
+@font-face {
+  font-family: 'AlexBrush';
+  src: url('@/assets/fonts/AlexBrush-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'BiteChocolate';
+  src: url('@/assets/fonts/BiteChocolate-2RGl.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+  font-family: 'AlexBrush';
+}
