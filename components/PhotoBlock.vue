@@ -1,6 +1,9 @@
 <template>
-  <article :style="`background-image: url(${src});`">
-    <div class="title">La Fayette</div>
+  <article>
+    <img :src="src" />
+    <div class="title line-clamp">
+      La Fayette : un très gros test pour savoir si trois petits points
+    </div>
   </article>
 </template>
 
@@ -22,21 +25,26 @@ article {
   left: 0;
   max-width: 100%;
   max-height: 100%;
-  background-position: center;
-  background-size: cover;
+  background-color: #3c2a21;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   div.title {
-    position: relative;
-    top: 3rem;
-    margin: 0.5rem;
+    --pa: 0.5rem;
+    position: absolute;
+    top: 100%;
+    padding: var(--pa);
+    width: calc(100% - 2 * var(--pa));
     color: white;
     font-size: 0.8rem;
-    font-weight: 100;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
       -1px 1px 0 black;
   }
@@ -56,7 +64,7 @@ article {
 
     div.title {
       transition: all 0.3s ease-out;
-      top: 0;
+      top: calc(100% - 3.25rem);
     }
   }
 }

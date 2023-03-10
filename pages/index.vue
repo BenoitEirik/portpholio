@@ -12,16 +12,12 @@
 import { Photo } from "@/assets/ts/models";
 import exifr from "exifr";
 
-const urlStrings = (
-  await Promise.all(
-    Object.values(
-      import.meta.glob("@/assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
-        eager: true,
-        as: "url",
-      })
-    )
-  )
-).reduce((acc, val) => acc.concat(val), []) as string[];
+const imgs = Object.values(
+  import.meta.glob("@/assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
+    eager: true,
+    as: "url",
+  })
+).map((r) => r as unknown as string);
 
 export default defineComponent({
   setup() {
@@ -30,30 +26,27 @@ export default defineComponent({
 
     onMounted(async () => {
       if (!process.client) return;
-      await Promise.all(
-        urlStrings.map(async (url) => {
-          const img = new Image();
-          img.src = url;
-          await new Promise((resolve) => (img.onload = resolve));
 
-          exifr
-            .parse(url)
-            .then((output) =>
-              console.log("Camera:", output.Make, output.Model)
-            );
+      imgs.forEach(async (url) => {
+        const img = new Image();
+        img.src = url;
+        await new Promise((resolve) => (img.onload = resolve));
 
-          photos.value.push({
-            src: img.src,
-            width: img.width,
-            height: img.height,
-            date: "Date de prise inconnu",
-          } as Photo);
-        })
-      ).finally(() => {
-        if (pageRef.value !== null) {
-          (pageRef.value as Element)?.classList.add("loaded");
-        }
+        exifr
+          .parse(url)
+          .then((output) => console.log("Camera:", output.Make, output.Model));
+
+        photos.value.push({
+          src: img.src,
+          width: img.width,
+          height: img.height,
+          date: "Date de prise inconnu",
+        } as Photo);
       });
+
+      if (pageRef.value !== null) {
+        (pageRef.value as Element)?.classList.add("loaded");
+      }
     });
 
     return {
