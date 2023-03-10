@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Photo } from "@/assets/ts/models";
-import ExifReader from "exifreader";
+import exifr from "exifr";
 
 const urlStrings = (
   await Promise.all(
@@ -36,12 +36,11 @@ export default defineComponent({
           img.src = url;
           await new Promise((resolve) => (img.onload = resolve));
 
-          fetch(url)
-            .then((response) => response.arrayBuffer())
-            .then(async (arrayBuffer) => {
-              const tags = await ExifReader.load(arrayBuffer);
-              console.log("tags =", tags.DocumentName?.description || "");
-            });
+          exifr
+            .parse(url)
+            .then((output) =>
+              console.log("Camera:", output.Make, output.Model)
+            );
 
           photos.value.push({
             src: img.src,
