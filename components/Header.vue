@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="shadow-gradient" />
-    Header, C'est un essai !
+    <h3>Portholio</h3>
   </header>
 </template>
 
@@ -13,6 +13,7 @@ header {
   padding: 1rem;
   color: white;
   font-size: 1rem;
+  font-family: "BiteChocolate";
 
   .shadow-gradient {
     z-index: -1;

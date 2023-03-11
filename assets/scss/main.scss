@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'SouthLand';
-  src: url('@/assets/fonts/Southland Letter.otf');
+  font-family: 'BiteChocolate';
+  src: url('@/assets/fonts/Bite Chocolate Personal Use.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'BiteChocolate';
-  src: url('@/assets/fonts/BiteChocolate-2RGl.ttf');
+  font-family: 'SelfModernRegular';
+  src: url('@/assets/fonts/self-modern_regular_web.woff2') format('woff2');
 }
 
 body {
@@ -13,5 +13,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: $primary;
+  font-family: 'SelfModernRegular';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
   font-family: 'BiteChocolate';
+  font-weight: normal;
+  line-height: 200%;
 }

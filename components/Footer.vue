@@ -1,8 +1,8 @@
 <template>
   <footer v-bind:style="{ height: getWrapperHeight }">
     <div ref="wrapperRef" id="wrapper">
-      <p class="signature">Olaf-Marie Sergent</p>
-      <p class="profession">Photgraphe amateur</p>
+      <h4 class="signature">Olaf-Marie Sergent</h4>
+      <p class="profession">Photographe amateur</p>
     </div>
   </footer>
 </template>

@@ -29,11 +29,9 @@ div {
 
   p {
     position: absolute;
-    top: 75%;
+    top: 85%;
     left: 50%;
     margin: 0;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
     font-size: 16px !important;
     color: white;
     transform: translateX(-50%);

@@ -1,9 +1,9 @@
 <template>
   <article>
     <img :src="src" loading="lazy" />
-    <div class="title">
+    <h5 class="title">
       La Fayette : un très gros test pour savoir si trois petits points
-    </div>
+    </h5>
   </article>
 </template>
 
@@ -34,7 +34,7 @@ article {
     object-fit: cover;
   }
 
-  div.title {
+  .title {
     $pa: 0.5rem;
     position: absolute;
     top: 100%;
@@ -62,9 +62,9 @@ article {
     box-shadow: 0 0 2rem 0 $primary;
     transition: all 0.3s ease-out;
 
-    div.title {
+    .title {
       transition: all 0.3s ease-out;
-      top: calc(100% - 3.25rem);
+      transform: translateY(-100%);
     }
   }
 }
