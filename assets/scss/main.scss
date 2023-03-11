@@ -8,12 +8,15 @@
   src: url('@/assets/fonts/Martel-ExtraLight.woff2') format('woff2');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background: $primary;
-  font-family: 'MartelExtraLight';
+  font-family: 'MartelExtraLight';  // The only one heritated by children
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -2,18 +2,12 @@
   <div class="appWrapper">
     <Header />
     <NuxtPage class="pageWrapper" />
-    <Footer />
+    <Footer @height="(height) => (footerHeight = height)" />
   </div>
 </template>
 
 <script setup lang="ts">
 const footerHeight = ref<string>("100vh");
-
-function setFooterHeight(value: string) {
-  footerHeight.value = value;
-}
-
-provide("setFooterHeight", setFooterHeight);
 </script>
 
 <style lang="scss">

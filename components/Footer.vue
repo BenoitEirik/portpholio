@@ -1,5 +1,5 @@
 <template>
-  <footer v-bind:style="{ height: getWrapperHeight }">
+  <footer v-bind:style="{ height: wrapperHeight }">
     <div ref="wrapperRef" id="wrapper">
       <h4 class="signature">Olaf-Marie Sergent</h4>
       <p class="profession">Photographe amateur</p>
@@ -7,26 +7,20 @@
   </footer>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  setup() {
-    const wrapperRef = ref(null);
-    const getWrapperHeight = computed(() => {
-      if (wrapperRef.value !== null) {
-        const value = (wrapperRef.value as Element).clientHeight + "px";
-        const setFooterHeight = inject("setFooterHeight") as Function;
-        setFooterHeight(value);
-        return value;
-      } else {
-        return "100px";
-      }
-    });
+<script setup lang="ts">
+import { useResizeObserver } from "@vueuse/core";
 
-    return {
-      wrapperRef,
-      getWrapperHeight,
-    };
-  },
+const wrapperRef = ref(null);
+const wrapperHeight = ref("0px");
+
+const emit = defineEmits(["height"]);
+
+useResizeObserver(wrapperRef, () => {
+  if (wrapperRef.value !== null) {
+    const height = `${(wrapperRef.value as Element).clientHeight}px`;
+    emit("height", height);
+    wrapperHeight.value = height;
+  }
 });
 </script>
 

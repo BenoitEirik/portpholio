@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   unocss: {
     // presets
     uno: false, // enabled `@unocss/preset-uno`
-    wind: true,
+    wind: false,
     icons: true, // enabled `@unocss/preset-icons`
     attributify: true, // enabled `@unocss/preset-attributify`,
     // core options

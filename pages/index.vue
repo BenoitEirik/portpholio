@@ -1,7 +1,7 @@
 <template>
   <div ref="pageRef" class="page">
     <div class="presentation">
-      <h2>Bienv]enue</h2>
+      <h1>Bienv]enue</h1>
       <p>Voici l'ensemble de mes photos. Bonne visite !</p>
     </div>
 
@@ -25,12 +25,6 @@ import exifr from "exifr";
 const photos = ref([] as Photo[]);
 const pageRef = ref(null);
 const loading = ref<boolean>(true);
-defineProps({
-  footerHeight: {
-    type: String,
-    default: "100vh",
-  },
-});
 
 onMounted(async () => {
   const imgs = Object.values<Record<string, any>>(
@@ -72,7 +66,7 @@ onMounted(async () => {
     color: white;
     animation: appear 1s;
 
-    p:nth-child(1) {
+    h1:nth-child(1) {
       z-index: 2;
       position: relative;
       font-size: 2rem;
@@ -81,7 +75,7 @@ onMounted(async () => {
       &::before {
         position: absolute;
         z-index: -1;
-        content: "Bienvenue";
+        content: "Bienv]enue";
         background: linear-gradient(
           180deg,
           rgba(2, 0, 36, 1) 50%,
@@ -93,7 +87,7 @@ onMounted(async () => {
         top: 4px;
       }
     }
-    p:nth-child(2) {
+    p:nth-child(1) {
       font-size: 1rem;
     }
   }
