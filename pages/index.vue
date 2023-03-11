@@ -111,12 +111,17 @@ onMounted(async () => {
   // Mobile-first
   .grid {
     position: relative;
-    padding: 1rem;
+    margin: 1rem;
     display: grid;
     gap: 0.25rem;
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: calc(100vw / 3 * 4);
     grid-auto-flow: dense;
+    border-radius: 4px;
+    overflow: hidden;
+    &:hover {
+      overflow: visible;
+    }
   }
 
   @media (min-width: 768px) {

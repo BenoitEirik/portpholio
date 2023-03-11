@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: 'SelfModernRegular';
-  src: url('@/assets/fonts/self-modern_regular_web.woff2') format('woff2');
+  font-family: 'MartelExtraLight';
+  src: url('@/assets/fonts/Martel-ExtraLight.woff2') format('woff2');
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: $primary;
-  font-family: 'SelfModernRegular';
+  font-family: 'MartelExtraLight';
 }
 
 h1, h2, h3, h4, h5, h6 {
