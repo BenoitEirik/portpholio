@@ -7,7 +7,7 @@
 
 <style lang="scss" scoped>
 header {
-  z-index: 1;
+  z-index: 10;
   position: fixed;
   inset: 0 0 auto 0;
   padding: 1rem;
@@ -21,7 +21,7 @@ header {
     width: 100%;
     height: 0;
     background-color: aqua;
-    box-shadow: 0 0 4rem 2rem black;
+    box-shadow: 0 0 4rem 2rem $primary;
   }
 }
 </style>

@@ -23,8 +23,8 @@ provide("setFooterHeight", setFooterHeight);
 
   .pageWrapper {
     min-height: calc(100vh - v-bind(footerHeight));
-    background-color: black;
-    box-shadow: 0 0 5rem 1rem black;
+    background-color: $primary;
+    box-shadow: 0 0 5rem 1rem $primary;
   }
 }
 </style>

@@ -76,8 +76,8 @@ onMounted(async () => {
       z-index: 2;
       position: relative;
       font-size: 2rem;
-      text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black,
-        -2px 2px 0 black;
+      text-shadow: 2px 2px 0 $primary, -2px -2px 0 $primary, 2px -2px 0 $primary,
+        -2px 2px 0 $primary;
       &::before {
         position: absolute;
         z-index: -1;
@@ -108,14 +108,23 @@ onMounted(async () => {
     justify-content: center;
   }
 
+  // Mobile-first
   .grid {
     position: relative;
     padding: 1rem;
     display: grid;
     gap: 0.25rem;
-    grid-template-columns: repeat(8, 1fr);
-    grid-auto-rows: calc(12.5vw / 3 * 4);
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: calc(100vw / 3 * 4);
     grid-auto-flow: dense;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(8, 1fr);
+      grid-auto-rows: calc(12.5vw / 3 * 4);
+      grid-auto-flow: dense;
+    }
   }
 
   @keyframes appear {

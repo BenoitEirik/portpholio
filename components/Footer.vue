@@ -41,7 +41,7 @@ footer {
     padding: 2rem 1rem;
     position: fixed;
     inset: auto 0 0 0;
-    background-color: #3c2a21;
+    background-color: $secondary;
     pointer-events: auto;
     display: flex;
     justify-content: center;

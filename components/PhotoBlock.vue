@@ -25,7 +25,7 @@ article {
   left: 0;
   max-width: 100%;
   max-height: 100%;
-  background-color: #3c2a21;
+  background-color: $secondary;
   overflow: hidden;
 
   img {
@@ -45,8 +45,8 @@ article {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
-      -1px 1px 0 black;
+    text-shadow: 1px 1px 0 $secondary, -1px -1px 0 $secondary,
+      1px -1px 0 $secondary, -1px 1px 0 $secondary;
   }
 
   &:hover {
@@ -59,7 +59,7 @@ article {
     height: $dimXY;
     max-width: $dimXY;
     max-height: $dimXY;
-    box-shadow: 0 0 2rem 0 black;
+    box-shadow: 0 0 2rem 0 $primary;
     transition: all 0.3s ease-out;
 
     div.title {
