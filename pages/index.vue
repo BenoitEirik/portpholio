@@ -1,7 +1,7 @@
 <template>
   <div ref="pageRef" class="page">
     <div class="presentation">
-      <p>Bienvenue</p>
+      <p>Bienv]enue</p>
       <p>Voici l'ensemble de mes photos. Bonne visite !</p>
     </div>
 
