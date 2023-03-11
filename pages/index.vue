@@ -58,8 +58,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 #page {
   position: relative;
-  margin-block: 5rem 1rem;
-  margin-inline: 1rem;
+  padding-block: 5rem 2rem;
+  padding-inline: 1rem;
   display: grid;
   gap: 0.25rem;
   grid-template-columns: repeat(8, 1fr);
