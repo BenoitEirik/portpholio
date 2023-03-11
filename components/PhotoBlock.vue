@@ -59,7 +59,6 @@ article {
     max-width: calc(100% + 1rem);
     max-height: calc(100% + 1rem);
     box-shadow: 0 0 2rem 0 black;
-    border-radius: 4px;
     transition: all 0.3s ease-out;
 
     div.title {
