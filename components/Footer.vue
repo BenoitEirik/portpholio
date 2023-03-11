@@ -1,7 +1,7 @@
 <template>
   <footer v-bind:style="{ height: getWrapperHeight }">
     <div ref="wrapperRef" id="wrapper">
-      <div class="signature">Olaf-Marie Sergent</div>
+      <p class="signature">Olaf-Marie Sergent</p>
       <p class="profession">Photgraphe amateur</p>
     </div>
   </footer>
@@ -40,9 +40,12 @@ footer {
     inset: auto 0 0 0;
     background-color: #3c2a21;
     pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     .signature {
-      padding: 2rem auto;
       font-size: 2rem;
       text-align: center;
     }

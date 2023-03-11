@@ -50,14 +50,15 @@ article {
   }
 
   &:hover {
+    $dimXY: calc(100% + 1rem);
     z-index: 1;
     cursor: pointer;
     top: -0.5rem;
     left: -0.5rem;
-    width: calc(100% + 1rem);
-    height: calc(100% + 1rem);
-    max-width: calc(100% + 1rem);
-    max-height: calc(100% + 1rem);
+    width: $dimXY;
+    height: $dimXY;
+    max-width: $dimXY;
+    max-height: $dimXY;
     box-shadow: 0 0 2rem 0 black;
     transition: all 0.3s ease-out;
 
