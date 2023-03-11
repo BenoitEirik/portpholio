@@ -5,12 +5,15 @@
       <p>Voici l'ensemble de mes photos. Bonne visite !</p>
     </div>
 
-    <div id="grid">
+    <div v-if="!loading" id="grid">
       <PhotoBlock
         v-for="photo in photos"
         :src="photo.src"
         :style="photo.width > photo.height ? 'grid-column-end: span 2;' : ''"
       />
+    </div>
+    <div v-else class="loading">
+      <Loader />
     </div>
   </div>
 </template>
@@ -23,6 +26,7 @@ export default defineComponent({
   setup() {
     const photos = ref([] as Photo[]);
     const pageRef = ref(null);
+    const loading = ref<boolean>(true);
 
     onMounted(async () => {
       const imgs = Object.values<Record<string, any>>(
@@ -48,9 +52,11 @@ export default defineComponent({
           date: "Date de prise inconnu",
         } as Photo);
       });
+      loading.value = false;
     });
 
     return {
+      loading,
       pageRef,
       photos,
     };
@@ -92,6 +98,16 @@ export default defineComponent({
     p:nth-child(2) {
       font-size: 1rem;
     }
+  }
+
+  .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
   }
 
   #grid {

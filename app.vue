@@ -3,12 +3,30 @@
     <Header />
 
     <div id="pageWrapper">
-      <NuxtPage />
+      <NuxtPage :footerHeight="footerHeight" />
     </div>
 
     <Footer />
   </div>
 </template>
+
+<script lang="ts">
+export default defineComponent({
+  setup() {
+    const footerHeight = ref<string>("0px");
+
+    const setFooterHeight = (value: string) => {
+      footerHeight.value = value;
+    };
+
+    provide("setFooterHeight", setFooterHeight);
+
+    return {
+      footerHeight,
+    };
+  },
+});
+</script>
 
 <style lang="scss">
 #app {

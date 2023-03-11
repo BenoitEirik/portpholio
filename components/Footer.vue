@@ -13,7 +13,10 @@ export default defineComponent({
     const wrapperRef = ref(null);
     const getWrapperHeight = computed(() => {
       if (wrapperRef.value !== null) {
-        return (wrapperRef.value as Element).clientHeight + "px";
+        const value = (wrapperRef.value as Element).clientHeight + "px";
+        const setFooterHeight = inject("setFooterHeight") as Function;
+        setFooterHeight(value);
+        return value;
       } else {
         return "100px";
       }
