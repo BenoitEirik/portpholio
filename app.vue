@@ -1,39 +1,28 @@
 <template>
-  <div id="app">
+  <div class="appWrapper">
     <Header />
-
-    <div id="pageWrapper">
-      <NuxtPage :footerHeight="footerHeight" />
-    </div>
-
+    <NuxtPage class="pageWrapper" />
     <Footer />
   </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  setup() {
-    const footerHeight = ref<string>("0px");
+<script setup lang="ts">
+const footerHeight = ref<string>("100vh");
 
-    const setFooterHeight = (value: string) => {
-      footerHeight.value = value;
-    };
+function setFooterHeight(value: string) {
+  footerHeight.value = value;
+}
 
-    provide("setFooterHeight", setFooterHeight);
-
-    return {
-      footerHeight,
-    };
-  },
-});
+provide("setFooterHeight", setFooterHeight);
 </script>
 
 <style lang="scss">
-#app {
+.appWrapper {
   position: relative;
   z-index: 0;
 
-  #pageWrapper {
+  .pageWrapper {
+    min-height: calc(100vh - v-bind(footerHeight));
     background-color: black;
     box-shadow: 0 0 5rem 1rem black;
   }

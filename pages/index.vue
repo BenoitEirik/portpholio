@@ -1,11 +1,11 @@
 <template>
-  <div ref="pageRef" id="page">
-    <div id="presentation">
+  <div ref="pageRef" class="page">
+    <div class="presentation">
       <p>Bienvenue</p>
       <p>Voici l'ensemble de mes photos. Bonne visite !</p>
     </div>
 
-    <div v-if="!loading" id="grid">
+    <div v-if="!loading" class="grid">
       <PhotoBlock
         v-for="photo in photos"
         :src="photo.src"
@@ -18,55 +18,53 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { Photo } from "@/assets/ts/models";
 import exifr from "exifr";
 
-export default defineComponent({
-  setup() {
-    const photos = ref([] as Photo[]);
-    const pageRef = ref(null);
-    const loading = ref<boolean>(true);
-
-    onMounted(async () => {
-      const imgs = Object.values<Record<string, any>>(
-        import.meta.glob("@/assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
-          eager: true,
-          as: "url",
-        })
-      ).map((r) => r as unknown as string);
-
-      imgs.forEach(async (url) => {
-        const img = new Image();
-        img.src = url;
-        await new Promise((resolve) => (img.onload = resolve));
-
-        exifr
-          .parse(url)
-          .then((output) => console.log("Camera:", output.Make, output.Model));
-
-        photos.value.push({
-          src: img.src,
-          width: img.width,
-          height: img.height,
-          date: "Date de prise inconnu",
-        } as Photo);
-      });
-      loading.value = false;
-    });
-
-    return {
-      loading,
-      pageRef,
-      photos,
-    };
+const photos = ref([] as Photo[]);
+const pageRef = ref(null);
+const loading = ref<boolean>(true);
+defineProps({
+  footerHeight: {
+    type: String,
+    default: "100vh",
   },
+});
+
+onMounted(async () => {
+  const imgs = Object.values<Record<string, any>>(
+    import.meta.glob("@/assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG}", {
+      eager: true,
+      as: "url",
+    })
+  ).map((r) => r as unknown as string);
+
+  imgs.forEach(async (url) => {
+    const img = new Image();
+    img.src = url;
+    await new Promise((resolve) => (img.onload = resolve));
+
+    exifr
+      .parse(url)
+      .then((output) => console.log("Camera:", output.Make, output.Model));
+
+    photos.value.push({
+      src: img.src,
+      width: img.width,
+      height: img.height,
+      date: "Date de prise inconnu",
+    } as Photo);
+  });
+  loading.value = false;
 });
 </script>
 
 <style lang="scss" scoped>
-#page {
-  #presentation {
+.page {
+  padding-bottom: 2rem;
+
+  .presentation {
     position: relative;
     padding-block: 5rem 1rem;
     padding-inline: 1rem;
@@ -110,7 +108,7 @@ export default defineComponent({
     justify-content: center;
   }
 
-  #grid {
+  .grid {
     position: relative;
     padding: 1rem;
     display: grid;
