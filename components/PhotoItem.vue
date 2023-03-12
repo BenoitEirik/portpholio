@@ -7,13 +7,11 @@
   </article>
 </template>
 
-<script>
-export default defineComponent({
-  props: {
-    src: {
-      type: String,
-      default: "@/assets/gallery/IMG_20210614_161845.jpg",
-    },
+<script setup lang="ts">
+const props = defineProps({
+  src: {
+    type: String,
+    default: "@/assets/gallery/IMG_20210614_161845.jpg",
   },
 });
 </script>

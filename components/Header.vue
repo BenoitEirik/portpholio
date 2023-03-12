@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="shadow-gradient" />
-    <h3>Portholio</h3>
+    <h3>Portpholio</h3>
   </header>
 </template>
 

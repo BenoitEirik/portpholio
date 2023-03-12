@@ -6,7 +6,7 @@
     </div>
 
     <div v-if="!loading" class="grid">
-      <PhotoBlock
+      <PhotoItem
         v-for="photo in photos"
         :src="photo.src"
         :style="photo.width > photo.height ? 'grid-column-end: span 2;' : ''"
@@ -104,12 +104,14 @@ onMounted(async () => {
 
   // Mobile-first
   .grid {
+    $nbCol: 1;
+    $gap: 0.25rem;
     position: relative;
     margin: 1rem;
     display: grid;
-    gap: 0.25rem;
-    grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: calc(100vw / 3 * 4);
+    gap: $gap;
+    grid-template-columns: repeat($nbCol, 1fr);
+    grid-auto-rows: calc(100vw / $nbCol / 3 * 4 - ($nbCol - 1) * $gap);
     grid-auto-flow: dense;
     border-radius: 4px;
     overflow: hidden;
@@ -118,11 +120,12 @@ onMounted(async () => {
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $sm) {
     .grid {
-      grid-template-columns: repeat(8, 1fr);
-      grid-auto-rows: calc(12.5vw / 3 * 4);
-      grid-auto-flow: dense;
+      $nbCol: 8;
+      $gap: 0.25rem;
+      grid-template-columns: repeat($nbCol, 1fr);
+      grid-auto-rows: calc(100vw / $nbCol / 3 * 4 - ($nbCol - 1) * $gap);
     }
   }
 
