@@ -41,6 +41,11 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-image: url("@/assets/images/footer/background.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: $sm;
 
     .signature {
       font-size: 2rem;
