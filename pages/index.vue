@@ -108,7 +108,7 @@ onMounted(async () => {
 
   // Mobile-first
   .grid {
-    $nbCol: 1;
+    $nbCol: 2;
     $gap: 0.25rem;
     $maxw: 100vw;
     margin-inline: auto;

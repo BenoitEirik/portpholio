@@ -20,8 +20,9 @@ div {
   }
   img:nth-child(2) {
     position: absolute;
-    top: 16px;
-    left: 17.3px;
+    top: 18px;
+    left: 38%;
+    transform: translateX(-50%);
     width: 26%;
     object-fit: cover;
     animation: spin 2s linear infinite;
