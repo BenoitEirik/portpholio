@@ -3,6 +3,7 @@
     <div ref="wrapperRef" id="wrapper">
       <h4 class="signature">Olaf-Marie Sergent</h4>
       <p class="profession">Photographe amateur</p>
+      <img class="gif" src="@/assets/images/footer/eagle.gif" width="50px" />
     </div>
   </footer>
 </template>
@@ -54,6 +55,30 @@ footer {
 
     .profession {
       text-align: center;
+    }
+
+    .gif {
+      position: absolute;
+      top: 25%;
+      animation-name: flight-bird;
+      animation-duration: 8s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      -webkit-animation-delay: 3s;
+      -moz-animation-delay: 3s;
+      -ms-animation-delay: 3s;
+      -o-animation-delay: 3s;
+      animation-delay: 3s;
+    }
+
+    @keyframes flight-bird {
+      0% {
+        left: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        left: 100%;
+      }
     }
   }
 }
