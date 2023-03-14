@@ -47,7 +47,7 @@ article {
     position: absolute;
     top: 100%;
     padding: $pa;
-    width: calc(100% - 2 * $pa);
+    width: 100%;
     color: white;
     font-size: 0.8rem;
     white-space: nowrap;
@@ -55,6 +55,7 @@ article {
     overflow: hidden;
     text-shadow: 1px 1px 0 $secondary, -1px -1px 0 $secondary,
       1px -1px 0 $secondary, -1px 1px 0 $secondary;
+    background: linear-gradient(transparent, $primary 150%);
   }
 
   &:hover {
