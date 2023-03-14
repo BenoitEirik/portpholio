@@ -1,6 +1,7 @@
 <template>
   <footer v-bind:style="{ height: wrapperHeight }">
     <div ref="wrapperRef" id="wrapper">
+      <img class="avatar" src="@/assets/images/footer/avatar.jpg" />
       <h4 class="signature">Olaf-Marie Sergent</h4>
       <p class="profession">Photographe amateur</p>
       <img class="gif" src="@/assets/images/footer/eagle.gif" width="50px" />
@@ -39,7 +40,7 @@ footer {
     background-color: $secondary;
     pointer-events: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     background-image: url("@/assets/images/footer/background.svg");
@@ -47,6 +48,14 @@ footer {
     background-repeat: no-repeat;
     background-size: 100% auto;
     min-height: $sm;
+
+    .avatar {
+      margin-bottom: 2rem;
+      width: 100px;
+      height: 100px;
+      border: 2px solid white;
+      border-radius: 100%;
+    }
 
     .signature {
       font-size: 2rem;
