@@ -97,13 +97,8 @@ onMounted(async () => {
   }
 
   .loading {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    width: 100%;
-    justify-content: center;
+    margin-block: 1rem;
+    margin-inline: auto;
   }
 
   // Mobile-first

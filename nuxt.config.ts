@@ -26,5 +26,10 @@ export default defineNuxtConfig({
     // core options
     shortcuts: [],
     rules: []
+  },
+  app: {
+    head: {
+      title: 'Portphoto'
+    }
   }
 })
