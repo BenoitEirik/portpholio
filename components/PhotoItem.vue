@@ -1,6 +1,9 @@
 <template>
   <article>
     <img :src="src" loading="lazy" />
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+    />
     <h5 class="title">
       La Fayette : un très gros test pour savoir si trois petits points
     </h5>
@@ -26,10 +29,17 @@ article {
   background-color: $secondary;
   overflow: hidden;
 
-  img {
+  img:nth-child(1) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  img:nth-child(2) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 
   .title {
