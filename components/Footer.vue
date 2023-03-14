@@ -80,6 +80,10 @@ footer {
         left: 100%;
       }
     }
+
+    @media (min-width: $xxl) {
+      background-size: max($xxl) auto;
+    }
   }
 }
 </style>
