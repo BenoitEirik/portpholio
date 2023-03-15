@@ -47,7 +47,7 @@ footer {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 100% auto;
-    min-height: $sm;
+    min-height: $xs;
 
     .avatar {
       margin-bottom: 2rem;
