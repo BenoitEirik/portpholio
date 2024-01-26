@@ -10,7 +10,6 @@
   "devDependencies": {
     "@nuxt/content": "^2.5.2",
     "@unocss/nuxt": "^0.50.4",
-    "node-sass": "^8.0.0",
     "nuxt": "^3.2.3",
     "sass": "^1.58.3"
   },
